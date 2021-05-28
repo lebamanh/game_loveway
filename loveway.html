@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Circle Canvas</title>
+</head>
+<body onload="suka.painImg(pen)">
+<canvas id="myCanvas" width="400px" height="400px" style="border: 2px solid black; background-color: darksalmon ">
+</canvas>
+
+<script>
+    let canvas = document.getElementById('myCanvas');
+    let pen = canvas.getContext('2d');
+
+    //khoi thu 1
+    class Khoi {
+        x;
+        y;
+        dai;
+        rong;
+        color;
+        img;
+
+        constructor(x, y, dai, rong, color) {
+            this.x = x;
+            this.y = y;
+            this.dai = dai;
+            this.rong = rong;
+            this.color = color;
+        }
+
+        pain(pen) {
+            pen.beginPath();
+            pen.rect(this.x, this.y, this.dai, this.rong);
+            pen.lineWidth = 1;
+            pen.stroke();
+            pen.fillStyle = this.color;
+            pen.fill();
+            pen.closePath();
+        }
+    }
+
+    // vẽ khối
+    let dt1 = new Khoi(50, 50, 50, 100, "red");
+    dt1.pain(pen);
+    let dt2 = new Khoi(150, 50, 50, 50, "blue");
+    dt2.pain(pen);
+    let dt3 = new Khoi(250, 0, 100, 50, "blue");
+    dt3.pain(pen);
+    let dt4 = new Khoi(50, 200, 50, 50, "orange");
+    dt4.pain(pen);
+    let dt5 = new Khoi(250, 200, 100, 50, "blue");
+    dt5.pain(pen);
+    let dt6 = new Khoi(150, 150, 48, 100, "violet");
+    dt6.pain(pen);
+    let dt7 = new Khoi(200, 300, 50, 150, "violet");
+    dt7.pain(pen);
+    let dt8 = new Khoi(300, 300, 150, 50, "violet");
+    dt8.pain(pen);
+    let dt9 = new Khoi(50, 300, 100, 49, "violet");
+    dt9.pain(pen);
+    let dt10 = new Khoi(250, 100, 150, 50, "green");
+    dt10.pain(pen);
+
+    // Vẽ nhân vật suka
+    // class anh {
+    //     constructor(x, y, dai, rong, img) {
+    //         this.x = x;
+    //         this.y = y;
+    //         this.dai = dai;
+    //         this.rong = rong;
+    //         this.img = img;
+    //     }
+    //
+    //     painImg(pen) {
+    //         const image = new Image(); // Using optional size for image
+    //         image.src = this.img;
+    //         pen.drawImage(image, this.x, this.y, this.dai, this.rong);
+    //     }
+    // }
+    //
+    // let suka = new anh(350, 0, 50, 50, suka.png);
+    // let speed = 5;
+    // suka.painImg(pen);
+    //
+    // function move() {
+    //     pen.clearRect(suka.x, suka.y, 50, 50) // xoa anh
+    //     console.log(suka.y)
+    //
+    //     suka.y += speed;
+    //     if (suka.y == 50| suka.y==0) {
+    //         speed = -speed;
+    //     }
+    //     suka.painImg(pen)     // ve lai
+    //     drawKhoi()
+    // }
+
+    // function drawKhoi() {
+    //     dt1.pain(pen);
+    //     dt2.pain(pen);
+    //     dt3.pain(pen);
+    //     dt4.pain(pen);
+    //     dt5.pain(pen);
+    //     dt6.pain(pen);
+    //     dt7.pain(pen);
+    //     dt8.pain(pen);
+    //     dt8.pain(pen);
+    //     dt9.pain(pen);
+    //     dt10.pain(pen);
+    // }
+    // setInterval(move, 100)
+    //
+    //     pen.beginPath();
+    //     pen.rect(50,50,50,100);
+    //     pen.lineWidth = 1;
+    //     pen.stroke();
+    //     pen.fillStyle = 'pink';
+    //     pen.fill();
+    //     pen.closePath();
+    //
+    // //khoi thu 2
+    // pen.beginPath();
+    // pen.rect(150,50,50,50);
+    // pen.lineWidth = 1;
+    // pen.stroke();
+    // pen.fillStyle = 'green';
+    // pen.fill();
+    // pen.closePath();
+    //
+    // //khoi thu 3
+    //     pen.beginPath();
+    //     pen.rect(250,0,100,50);
+    //     pen.lineWidth = 1;
+    //     pen.stroke();
+    //     pen.fillStyle = 'red';
+    //     pen.fill();
+    //     pen.closePath();
+    //
+    // //khoi thu 4
+    // pen.beginPath();
+    // pen.rect(50,200,50,50);
+    // pen.lineWidth = 1;
+    // pen.stroke();
+    // pen.fillStyle = 'violet';
+    // pen.fill();
+    // pen.closePath();
+    //
+    // pen.beginPath();
+    // pen.rect(250,200,100,50);
+    // pen.lineWidth = 1;
+    // pen.stroke();
+    // pen.fillStyle = 'violet';
+    // pen.fill();
+    // pen.closePath();
+    //
+    // //khoi thu 5
+    // pen.beginPath();
+    // pen.rect(150,150,48,100);
+    // pen.lineWidth = 1;
+    // pen.stroke();
+    // pen.fillStyle = 'orange';
+    // pen.fill();
+    // pen.closePath();
+    //
+    // pen.beginPath();
+    // pen.rect(50,300,100,49);
+    // pen.lineWidth = 1;
+    // pen.stroke();
+    // pen.fillStyle = 'blue';
+    // pen.fill();
+    // pen.closePath();
+    //
+    // pen.beginPath();
+    // pen.rect(200,300,50,150);
+    // pen.lineWidth = 1;
+    // pen.stroke();
+    // pen.fillStyle = 'blue';
+    // pen.fill();
+    // pen.closePath();
+    //
+    //
+    // pen.beginPath();
+    // pen.rect(250,100,150,50);
+    // pen.lineWidth = 1;
+    // pen.stroke();
+    // pen.fillStyle = 'blue';
+    // pen.fill();
+    // pen.closePath();
+    //
+    //
+    // pen.beginPath();
+    // pen.rect(300,300,150,50);
+    // pen.lineWidth = 1;
+    // pen.stroke();
+    // pen.fillStyle = 'blue';
+    // pen.fill();
+    // pen.closePath();
+    //
+    // pen.beginPath();
+    // pen.arc(125,190,10,0,2*Math.PI);
+    // pen.strokeStyle = 'red'
+    // pen.lineWidth= 10;
+    // pen.stroke();
+    // pen.fillStyle= 'green';
+    // pen.fill();
+    // pen.closePath();
+
+
+</script>
+</body>
+</html>
